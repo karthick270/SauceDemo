@@ -13,7 +13,6 @@ namespace SauceDemo.PageObjects
             _driver = driver;
         }
         
-        public List<IWebElement> Price { get; set; }
         public IList<IWebElement> inventoryList => Driver.FindElements(By.ClassName("inventory_item"));
         public IWebElement ShoppingCartLink => Driver.FindElement(By.ClassName("shopping_cart_link"));
 
