@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using SauceDemo.Elements;
+using SauceDemo.Models;
 using TechTalk.SpecFlow;
 
 namespace SauceDemo.PageObjects
