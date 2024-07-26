@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SauceDemo.Elements;
-using SeleniumExtras.PageObjects;
 using TechTalk.SpecFlow;
 
 namespace SauceDemo.PageObjects
@@ -12,15 +11,12 @@ namespace SauceDemo.PageObjects
         {
             _driver = driver;
         }
-        
+
         public IList<IWebElement> inventoryList => Driver.FindElements(By.ClassName("inventory_item"));
         public IWebElement ShoppingCartLink => Driver.FindElement(By.ClassName("shopping_cart_link"));
 
         public void SelectHighestPriceItem()
         {
-            var inventoryList = _driver.FindElements(By.ClassName("inventory_item"));
-            //List<IWebElement> priceBars = new List<IWebElement>();
-            //List<IWebElement> inventoryItemNames = new List<IWebElement>();
             var inventoryItems = new List<InventoryItem>();
 
             foreach (var item in inventoryList)
@@ -32,9 +28,9 @@ namespace SauceDemo.PageObjects
                     ItemPrice = GetItemPrice(priceBar),
                     AddCart = priceBar.FindElement(By.ClassName("btn_inventory"))
                 };
-                inventoryItems.Add(inventoryItem);  
+                inventoryItems.Add(inventoryItem);
             }
-            
+
             var priceDict = new Dictionary<IWebElement, double>();
 
             var maxPriceItem = inventoryItems.OrderByDescending(x => x.ItemPrice).First();
@@ -57,8 +53,8 @@ namespace SauceDemo.PageObjects
 
         public void ClickShoppingCartLink()
         {
-            if(ShoppingCartLink.Displayed)
-            ShoppingCartLink.Click();
-        }        
+            if (ShoppingCartLink.Displayed)
+                ShoppingCartLink.Click();
+        }
     }
 }
