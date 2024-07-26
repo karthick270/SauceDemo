@@ -25,7 +25,6 @@ namespace SauceDemo.Hooks
         {
             var driver = Driver.CreateBrowserSession();
             _container.RegisterInstanceAs(driver);
-            //_container.RegisterTypes<BasePage>(_container.Resolve<IWebDriver>());
         }
 
         [AfterScenario(Order = 99)]

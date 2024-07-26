@@ -1,8 +1,7 @@
 ﻿using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
 using SauceDemo.Elements;
+using SeleniumExtras.PageObjects;
 using TechTalk.SpecFlow;
-using System.Net.WebSockets;
 
 namespace SauceDemo.PageObjects
 {
